@@ -16,8 +16,8 @@ export class PostService {
     return this.posts;
   }
 
-  getPostById(id: number): Post {
-    const post = this.posts.find((p) => p.id === id);
+  getPostById(id: string): Post {
+    const post = this.posts.find((p) => p.id === Number(id));
     if (post) return post;
     throw new HttpException('Post not found', HttpStatus.NOT_FOUND);
   }
@@ -26,7 +26,7 @@ export class PostService {
     return body;
   }
 
-  updatePost(id: number, body: UpdatePostDTO) {
+  updatePost(id: string, body: UpdatePostDTO) {
     return { id: id, body: body };
   }
 }

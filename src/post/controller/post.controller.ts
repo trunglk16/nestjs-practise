@@ -17,7 +17,7 @@ export class PostController {
 
   @Get()
   async getAllPost() {
-    return this.postService.getAllPost();
+    return this.postService.getAllPosts();
   }
 
   @Get(':id')
