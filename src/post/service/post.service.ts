@@ -23,10 +23,15 @@ export class PostService {
   }
 
   createPost(body: CreatePostDTO) {
+    this.posts.push(body);
     return body;
   }
 
   updatePost(id: string, body: UpdatePostDTO) {
     return { id: id, body: body };
+  }
+
+  deletePost(id: string) {
+    return id;
   }
 }

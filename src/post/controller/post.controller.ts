@@ -32,12 +32,12 @@ export class PostController {
 
   @Put(':id')
   async updatePost(@Param('id') id: string, @Body() post: UpdatePostDTO) {
-    return this.postService.updatePost(Number(id), post);
+    return this.postService.updatePost(id, post);
   }
 
   @Delete(':id')
   async deletePost(@Param('id') id: string) {
-    this.postService.deletePost(Number(id));
+    this.postService.deletePost(id);
     return true;
   }
 }
